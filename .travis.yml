@@ -18,7 +18,8 @@ addons:
       - qemu
 
 before_script:
-- wget https://raw.githubusercontent.com/SydOS/toolchains/master/legacy/toolchain-i686.sh
+- git clone https://github.com/SydOS/toolchains.git
+- cd toolchains/legacy/
 - chmod +x toolchain-i686.sh
 - ./toolchain-i686.sh
 
