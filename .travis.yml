@@ -1,0 +1,15 @@
+addons:
+  homebrew:
+    packages:
+    - nasm
+    - qemu
+
+before_script:
+  - cd scripts && ./toolchain-i686.sh
+  - export PATH=$PATH:$HOME/tools
+
+script:
+  - ARCH=i686 make build-kernel
+
+before_deploy:
+  - git tag "$(date +'%m-%d-%Y_%H-%M-%S')_(git log --format=%h -1)"
