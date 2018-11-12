@@ -18,6 +18,7 @@ addons:
       - qemu
 
 before_script:
+- export PATH=$PATH:$HOME
 - git clone https://github.com/SydOS/toolchains.git
 - cd toolchains/legacy/
 - chmod +x toolchain-i686.sh
