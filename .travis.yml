@@ -1,15 +1,30 @@
+language: c
+os:
+  - linux
+  - osx
+
 addons:
   homebrew:
     packages:
     - nasm
     - qemu
+  apt:
+    update: true
+    packages:
+      - nasm
+      - qemu
+
 before_script:
-- cd scripts && ./toolchain-i686.sh
-- export PATH=$PATH:$HOME/tools
+- wget https://raw.githubusercontent.com/SydOS/toolchains/master/legacy/toolchain-i686.sh
+- chmod +x toolchain-i686.sh
+- ./toolchain-1686.sh
+
 script:
 - ARCH=i686 make build-kernel
+
 before_deploy:
 - git tag "$(date +'%m-%d-%Y_%H-%M-%S')_(git log --format=%h -1)"
+
 deploy:
   provider: releases
   api_key:
