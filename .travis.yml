@@ -17,7 +17,7 @@ addons:
 before_script:
 - wget https://raw.githubusercontent.com/SydOS/toolchains/master/legacy/toolchain-i686.sh
 - chmod +x toolchain-i686.sh
-- ./toolchain-1686.sh
+- ./toolchain-i686.sh
 
 script:
 - ARCH=i686 make build-kernel
