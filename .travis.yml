@@ -20,12 +20,13 @@ addons:
 before_script:
 - export PATH=$PATH:$HOME
 - ls
+- pwd
 #- git clone https://github.com/SydOS/toolchains.git
 #- cd toolchains/legacy/
 #- chmod +x toolchain-i686.sh
 #- ./toolchain-i686.sh
 
-#script:
+script:
 #- ARCH=i686 make build-kernel
 
 #before_deploy:
