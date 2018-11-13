@@ -19,21 +19,22 @@ addons:
 
 before_script:
 - export PATH=$PATH:$HOME
-- git clone https://github.com/SydOS/toolchains.git
-- cd toolchains/legacy/
-- chmod +x toolchain-i686.sh
-- ./toolchain-i686.sh
+- ls
+#- git clone https://github.com/SydOS/toolchains.git
+#- cd toolchains/legacy/
+#- chmod +x toolchain-i686.sh
+#- ./toolchain-i686.sh
 
-script:
-- ARCH=i686 make build-kernel
+#script:
+#- ARCH=i686 make build-kernel
 
-before_deploy:
-- git tag "$(date +'%m-%d-%Y_%H-%M-%S')_(git log --format=%h -1)"
+#before_deploy:
+#- git tag "$(date +'%m-%d-%Y_%H-%M-%S')_(git log --format=%h -1)"
 
-deploy:
-  provider: releases
-  api_key:
-    secure: QYa1eNmH1e+ZEIWe+AyIwcBr9PEDWjIMQmdo11YV6PhEY+6DPJDIphIPfQwl1WmDppPp9LAjHhIZvH4Iy2kLzGdqw+n/0GVLjXGlsCfKFxCu9xobZIUGyL22/gjngdkZO6PXkDgPew5WWCviTyOtM8R/ZLqlw0gXwFY3+7Pw0ol4E3vbh9sY0MCPc1KY46o0pFNYMjJO6b32OgyEqJmPnhm95FbhH5HchsnFEN27mtg+oTrTOGVxdy0K36pFMBqZgrP5P0SfA/TWpbfmRvSnlkQKtW8dmOOwbhiiliMgjCopaR8hZzaS5ngPhfSF4YWvoEiQMm456D5n3SpiGRjnYslCU/F6KX9PPgfLdm4y3+icwNt5OtkwyXSfWrL/O3l6kzeh1O821tQdQossfQ9KmAmp5vcchFhhrOiz4VZxPJfwdR73enUUigKeCkqfiN9lyMUKNVCYYaMvV2gMJt38CZ0Ri2KyunRh6Yrjw3qe6fQg/e54zOq2EE1ty8HkQAI1v8+MsTbbvJLIZI3Id4zb4I40omIrbzH/a0C/ljRZSE7VElF1Iqd89+yCbVos86TjqFhEIcRYUMSsm/hm+q13mzJm0+EMSxpmt7UWZCRtHdxe16vvRL6ky9PSXajKCmeNh+/jr39JPKTo2Dve2ZhGbRmeLpSThL2hbHGxaD26uFA=
-  file: os.iso
-  on:
-    repo: dhinakg/Star
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: QYa1eNmH1e+ZEIWe+AyIwcBr9PEDWjIMQmdo11YV6PhEY+6DPJDIphIPfQwl1WmDppPp9LAjHhIZvH4Iy2kLzGdqw+n/0GVLjXGlsCfKFxCu9xobZIUGyL22/gjngdkZO6PXkDgPew5WWCviTyOtM8R/ZLqlw0gXwFY3+7Pw0ol4E3vbh9sY0MCPc1KY46o0pFNYMjJO6b32OgyEqJmPnhm95FbhH5HchsnFEN27mtg+oTrTOGVxdy0K36pFMBqZgrP5P0SfA/TWpbfmRvSnlkQKtW8dmOOwbhiiliMgjCopaR8hZzaS5ngPhfSF4YWvoEiQMm456D5n3SpiGRjnYslCU/F6KX9PPgfLdm4y3+icwNt5OtkwyXSfWrL/O3l6kzeh1O821tQdQossfQ9KmAmp5vcchFhhrOiz4VZxPJfwdR73enUUigKeCkqfiN9lyMUKNVCYYaMvV2gMJt38CZ0Ri2KyunRh6Yrjw3qe6fQg/e54zOq2EE1ty8HkQAI1v8+MsTbbvJLIZI3Id4zb4I40omIrbzH/a0C/ljRZSE7VElF1Iqd89+yCbVos86TjqFhEIcRYUMSsm/hm+q13mzJm0+EMSxpmt7UWZCRtHdxe16vvRL6ky9PSXajKCmeNh+/jr39JPKTo2Dve2ZhGbRmeLpSThL2hbHGxaD26uFA=
+#  file: os.iso
+#  on:
+#    repo: dhinakg/Star
